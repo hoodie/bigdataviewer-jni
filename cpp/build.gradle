@@ -8,6 +8,7 @@ model {
 				cppCompiler.args '-I', "${org.gradle.internal.jvm.Jvm.current().javaHome}/include/linux"
 				cppCompiler.args '-I', "${org.gradle.internal.jvm.Jvm.current().javaHome}/include/darwin"
 				cppCompiler.args '-I', "/opt/local/include"
+				cppCompiler.args "-fPIC"
 				linker.args '-L', "${org.gradle.internal.jvm.Jvm.current().javaHome}/jre/lib/server"
 				linker.args "-Wl,-rpath,${org.gradle.internal.jvm.Jvm.current().javaHome}/jre/lib/server"
 				linker.args '-L', "${org.gradle.internal.jvm.Jvm.current().javaHome}/jre/lib/amd64/server"
@@ -27,6 +28,7 @@ model {
 			binaries.all {
 				cppCompiler.args '-I', "/opt/local/include"
 				linker.args '-L', "/opt/local/lib"
+				linker.args "-fPIC"
 				linker.args "-lpng"
 			}
 		}
