@@ -6,3 +6,7 @@ target/
 **/.gradle/
 **/build/
 cpp/jars/
+*.swp
+*.d
+*.o
+*.so
